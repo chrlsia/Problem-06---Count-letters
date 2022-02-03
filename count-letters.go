@@ -22,17 +22,10 @@ import (
 
 func main(){
 	str:="I don't Think That You Have any Insight whatsoever into your capacity for good until you have some well-developed insight into your capacity for evil"
-
 	
 	sl:=strings.Split(str, " ")
-
-	output:=make(map[string]int)
-
-	for _, word:=range sl{
-		for i:=0;i<len(word);i++{
-			output[strings.ToLower(string(word[i]))]+=1
-		}
-	}
+	
+	output:=createOutput(sl)
 
 	fmt.Println(output)
 
@@ -41,4 +34,14 @@ func main(){
 	}
 
 	// fmt.Println(strings.ToLower("S"))
+}
+
+func createOutput(sl []string) map[string]int{
+	output:=make(map[string]int)
+	for _, word:=range sl{
+		for i:=0;i<len(word);i++{
+			output[strings.ToLower(string(word[i]))]+=1
+		}
+	}
+	return output
 }
