@@ -21,22 +21,20 @@ import (
 )
 
 func main(){
-	str:="aaaaaaaaabbbbbbcccccAAAAABBBBBcccc"
+	str:="I don't Think That You Have any Insight whatsoever into your capacity for good until you have some well-developed insight into your capacity for evil"
 
 	
 	sl:=strings.Split(str, " ")
 	fmt.Printf("sl is:\n %v\n",sl)
 
 	output:=make(map[string]int)
-	// output["a"]=1
-	// fmt.Println(output)
 
 	for _, word:=range sl{
 		for i:=0;i<len(word);i++{
 			if string(word[i]) ==" "{
 				continue
 			}
-			output[string(word[i])]+=1
+			output[strings.ToLower(string(word[i]))]+=1
 		}
 	}
 
@@ -46,5 +44,5 @@ func main(){
 		fmt.Println(string(i),":",output[i])
 	}
 
-
+	// fmt.Println(strings.ToLower("S"))
 }
