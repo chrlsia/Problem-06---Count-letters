@@ -25,15 +25,11 @@ func main(){
 
 	
 	sl:=strings.Split(str, " ")
-	fmt.Printf("sl is:\n %v\n",sl)
 
 	output:=make(map[string]int)
 
 	for _, word:=range sl{
 		for i:=0;i<len(word);i++{
-			if string(word[i]) ==" "{
-				continue
-			}
 			output[strings.ToLower(string(word[i]))]+=1
 		}
 	}
