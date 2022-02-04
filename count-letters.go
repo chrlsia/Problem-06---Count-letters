@@ -18,11 +18,20 @@ i: 12
 import (
 	"fmt"
 	"strings"
+	"bufio"
+	"os"
 )
 
 func main(){
-	str:="I don't Think That You Have any Insight whatsoever into your capacity for good until you have some well-developed insight into your capacity for evil"
+
+	r:=bufio.NewReader(os.Stdin)
+	fmt.Println("Give me a sentence ...")
+	str,err:=r.ReadString('\n')
+	if err!=nil{
+		panic(err)
+	}
 	
+	str=strings.TrimSpace(str)
 	sl:=strings.Split(str, " ")
 	
 	output:=createOutput(sl)
